@@ -10,30 +10,43 @@
 <body>
     <div class="container">
         <div class="w-50 mx-auto mt-5">
-            <h1 class="display-4">Catalogue</h1>
-            <div class="row row-cols-md-3 mt-5">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Livre</h5>
-                        <p class="card-text">250.0 euros</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Voiture</h5>
-                        <p class="card-text">100.0 euros</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Moto</h5>
-                        <p class="card-text">250.0 euros</p>
-                    </div>
-                </div>
-            </div>
+            <h1 class="display-4">Votre panier</h1>
+            <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Livre</td>
+                        <td>1</td>
+                        <td>250.0</td>
+                    </tr>
+                    <tr>
+                        <td>Voiture</td>
+                        <td>1</td>
+                        <td>100.0</td>
+                    </tr>
+                    <tr>
+                        <td>Moto</td>
+                        <td>3</td>
+                        <td>250.0</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">Total</td>
+                        <td></td>
+                        <td class="font-weight-bold">600.0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <form method="post" action="/exos/exo2.php">
+                <button type="submit" class="btn btn-primary">Ajouter un livre</button>
+                <button type="submit" class="btn btn-primary">Ajouter une voiture</button>
+                <button type="submit" class="btn btn-primary">Ajouter une moto</button>
+            </form>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
