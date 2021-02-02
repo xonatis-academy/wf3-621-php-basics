@@ -1,4 +1,7 @@
 <?php
+/**
+ * STATIC SPACE 
+ */
 
 // 1. Créer une classe avec le nom du fichier
 class CuisineService
@@ -17,19 +20,18 @@ class CuisineService
     // 3. Quels sont les comportements/actions de cette classe ?
     public function cuisinerPouletALaTomate()
     {
-
         // 4. Quel est le résultat de cette action ?
-
+        
         // 4.1 Récupération des éléments des fournisseurs
-        $pouletDuFournisseur = $this->pouletFournisseur->fournit();
-        $tomateDuFournisseur = $this->tomateFournisseur->fournit();
+        $poulet = $this->pouletFournisseur->fournit();
+        $tomate = $this->tomateFournisseur->fournit();
 
         // 4.2 Création d'un résultat vide
         $plat = new PlatCuisine();
 
         // 4.3 Remplissage du résultat
-        $plat->tomate = $tomateDuFournisseur;
-        $plat->poulet = $pouletDuFournisseur;
+        $plat->tomate = $tomate;
+        $plat->poulet = $poulet;
         $plat->nom = 'Poulet a la tomate';
         $plat->prix = 13.50;
 
@@ -37,5 +39,4 @@ class CuisineService
         return $plat;
     }
 }
-
 ?>

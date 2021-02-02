@@ -1,4 +1,7 @@
 <?php
+/**
+ * STATIC SPACE
+ */
 
 class Poulet
 {

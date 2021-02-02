@@ -11,16 +11,16 @@
     <div class="container">
         <div class="w-50 mx-auto mt-5">
             <h1 class="display-4">Veuillez vous identifier</h1>
-            <form>
+            <form method="GET" action="verification.php">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons jamais votre adresse
                         email.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Mot de passe</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input name="mdp" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">S'identifier</button>
             </form>

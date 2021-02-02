@@ -1,4 +1,7 @@
 <?php
+/**
+ * STATIC SPACE
+ */
 
 // 1. Créer une classe avec le nom du fichier
 class PouletProvider
@@ -11,5 +14,4 @@ class PouletProvider
         return $toto;
     }
 }
-
 ?>
