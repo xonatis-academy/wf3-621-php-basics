@@ -3,7 +3,11 @@
 $email = $_GET['email'];
 $motDePasse = $_GET['mdp'];
 
-var_dump($email);
-var_dump($motDePasse);
+// si l'email est égal à admin@admin.com ET le mot de passe est égal à admin
+// ben la page est redirigée vers result.html
+if ($email == 'admin@admin.com' && $motDePasse == 'admin')
+{
+    header('LOCATION: result.html');
+}
 
 ?>
