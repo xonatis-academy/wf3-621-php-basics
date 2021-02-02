@@ -9,5 +9,10 @@ if ($email == 'admin@admin.com' && $motDePasse == 'admin')
 {
     header('LOCATION: result.html');
 }
+// Sinon, on revoie un status code 401
+else
+{
+    http_response_code(401);
+}
 
 ?>
