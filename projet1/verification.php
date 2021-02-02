@@ -17,21 +17,30 @@ class SecurityService
     }
 }
 
+class PortiqueHumainController
+{
+    public function filtre(bool $reponseDeLaSecurite)
+    {
+        // si la reponse de la securite est TRUE
+        // ben la page est redirigée vers result.html
+        if ($reponseDeLaSecurite == true)
+        {
+            header('LOCATION: result.html');
+        }
+        // Sinon, on revoie un status code 401
+        else
+        {
+            http_response_code(401);
+        }
+    }
+}
+
 $email = $_GET['email'];
 $motDePasse = $_GET['mdp'];
 
 $william = new SecurityService();
-$reponse = $william->verifie($email, $motDePasse);
-// si l'email est égal à admin@admin.com ET le mot de passe est égal à admin
-// ben la page est redirigée vers result.html
-if ($reponse == true)
-{
-    header('LOCATION: result.html');
-}
-// Sinon, on revoie un status code 401
-else
-{
-    http_response_code(401);
-}
+$reponseConcrete = $william->verifie($email, $motDePasse);
 
+$bernadette = new PortiqueHumainController();
+$bernadette->filtre($reponseConcrete);
 ?>
