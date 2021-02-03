@@ -1,5 +1,4 @@
 <?php
-include __DIR__.'/index.html.php';
 
 $email = '';
 $mdp = '';
@@ -12,6 +11,11 @@ if ( isset($_GET['email']) )
 if ( isset($_GET['mdp']) )
 {
     $mdp = $_GET['mdp'];
+}
+
+if ($email == '' && $mdp == '')
+{
+    include __DIR__.'/index.html.php';
 }
 
 if ($email == 'admin@admin.com' && $mdp == 'admin')
