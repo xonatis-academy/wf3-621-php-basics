@@ -15,7 +15,7 @@
                 Cliquez sur le bouton ci-dessous pour vous déconnecter.
             </p>
             <form>
-                <a href="index.html" class="btn btn-primary">Se déconnecter</a>
+                <a href="index.php" class="btn btn-primary">Se déconnecter</a>
             </form>
         </div>
     </div>
