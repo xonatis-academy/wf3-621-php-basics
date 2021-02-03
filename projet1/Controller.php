@@ -11,14 +11,14 @@ class Controller
         $identifiant->email = '';
         $identifiant->mdp = '';
         
-        if ( isset($_GET['email']) )
+        if ( isset($_POST['email']) )
         {
-            $identifiant->email = $_GET['email'];
+            $identifiant->email = $_POST['email'];
         }
         
-        if ( isset($_GET['mdp']) )
+        if ( isset($_POST['mdp']) )
         {
-            $identifiant->mdp = $_GET['mdp'];
+            $identifiant->mdp = $_POST['mdp'];
         }
         
         if ($identifiant->email == '' && $identifiant->mdp == '')
@@ -28,7 +28,7 @@ class Controller
         
         if ($identifiant->email == 'admin@admin.com' && $identifiant->mdp == 'admin')
         {
-            header('LOCATION: result.html.php');
+            // header('LOCATION: result.html.php');
         }
         else
         {

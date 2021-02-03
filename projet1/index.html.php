@@ -11,7 +11,7 @@
     <div class="container">
         <div class="w-50 mx-auto mt-5">
             <h1 class="display-4">Veuillez vous identifier</h1>
-            <form method="GET" action="index.php">
+            <form method="POST" action="index.php">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email</label>
                     <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
