@@ -10,10 +10,14 @@ class ArticleSelectionne
 
 $total = 0;
 
-$tableau = [];
-if (isset($_SESSION['panier']))
+$tableau;
+if (isset($_SESSION['tableau_tou_bo']))
 {
-    $tableau = $_SESSION['panier'];
+    $tableau = $_SESSION['tableau_tou_bo'];
+}
+else
+{
+    $tableau = [];
 }
 
 if (isset($_GET['btn-moto']))
@@ -75,7 +79,7 @@ for ($i = 0; $i < count($tableau); ++$i)
     $total = $total + $prix_total_du_produit;
 }
 
-$_SESSION['panier'] = $tableau;
+$_SESSION['tableau_tou_bo'] = $tableau;
 
 include __DIR__.'/index.html.php';
 
