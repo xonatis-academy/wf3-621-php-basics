@@ -28,7 +28,7 @@ class Controller
         
         if ($identifiant->email == 'admin@admin.com' && $identifiant->mdp == 'admin')
         {
-            // header('LOCATION: result.html.php');
+            header('LOCATION: result.html.php');
         }
         else
         {
