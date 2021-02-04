@@ -38,6 +38,8 @@ On fait le service demandé. On lit énoncé ? Plusieurs fois ?
         ?>
         ```
         - Il y a une boucle `for`, ca veut dire que ca pue le tableau !
+
+2. Développement back
         - Vous pensez dictionnaire ? ca veut dire que ca pue la classe (exemple : `ArticleSelectionne`). Mettez les bonnes propriétés !
         - Il y a une classe ? Il faut un objet, instancier la classe avec l'opérateur `new`
         ```php

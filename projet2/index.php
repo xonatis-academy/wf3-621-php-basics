@@ -6,22 +6,38 @@ class ArticleSelectionne
     public $quantite;
 }
 
-$total = 1236;
+$total = 0;
 
-$article1 = new ArticleSelectionne();
-$article1->nom = 'Test test';
-$article1->prix = 9999.0;
-$article1->quantite = 12;
+$tableau = [];
 
-$article2 = new ArticleSelectionne();
-$article2->nom = 'Testo';
-$article2->prix = 11111.0;
-$article2->quantite = 99;
+if (isset($_GET['btn-moto']))
+// Si le paramètre 'btn-moto' est dans l'URL 
+{
+    // On crée un nouvel article vide
+    $article = new ArticleSelectionne();
 
-$tableau = [
-    $article1,
-    $article2
-];
+    // On renseigne les champs pour 1 moto
+    $article->nom = 'Moto';
+    $article->prix = 1234.50;
+    $article->quantite = 1;
+
+    // On ajoute l'article dans le tableau des articles
+    $tableau[] = $article;
+}
+
+for ($i = 0; $i < count($tableau); ++$i)
+{
+    // 1. On répère chaque article du tableau, pourquoi "chaque" ?? Ben parce que
+    // la variable $i change voyons !
+    $article_courant = $tableau[$i];
+
+    // 2. Ben on calcule le prix total de l'article en cours
+    // = quantite * prix
+    $prix_total_du_produit = $article_courant->quantite * $article_courant->prix;
+
+    // 3. On accumule le prix total de l'article dans la variable $total
+    $total = $total + $prix_total_du_produit;
+}
 
 include __DIR__.'/index.html.php';
 
