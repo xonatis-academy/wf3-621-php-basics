@@ -12,27 +12,21 @@
         <div class="w-50 mx-auto mt-5">
             <h1 class="display-4">Catalogue</h1>
             <div class="row row-cols-md-3 mt-5">
+
+                <?php
+                for ($i = 0; $i < count($tableau); ++$i)
+                {
+                ?>
                 <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                    <img src="<?php echo $tableau[$i]->image; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Livre</h5>
-                        <p class="card-text">250.0 euros</p>
+                        <h5 class="card-title"><?php echo $tableau[$i]->nom; ?></h5>
+                        <p class="card-text"><?php echo $tableau[$i]->prix; ?> euros</p>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Voiture</h5>
-                        <p class="card-text">100.0 euros</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Moto</h5>
-                        <p class="card-text">250.0 euros</p>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
