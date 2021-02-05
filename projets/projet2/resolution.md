@@ -55,8 +55,8 @@ On fait le service demandé. On lit énoncé ? Plusieurs fois ?
         ```
 
 2. Développement back
-        - Vous pensez dictionnaire ? ca veut dire que ca pue la classe (exemple : `ArticleSelectionne`). Mettez les bonnes propriétés !
-        - Il y a une classe ? Il faut un objet, instancier la classe avec l'opérateur `new`
-        ```php
-        $article1 = new ArticleSelectionne();
-        ```
+    - Vous pensez dictionnaire ? ca veut dire que ca pue la classe (exemple : `ArticleSelectionne`). Mettez les bonnes propriétés !
+    - Il y a une classe ? Il faut un objet, instancier la classe avec l'opérateur `new`
+    ```php
+    $article1 = new ArticleSelectionne();
+    ```
