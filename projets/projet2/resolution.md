@@ -20,7 +20,7 @@ On fait le service demandé. On lit énoncé ? Plusieurs fois ?
     - Rendre dynamique le front
         - voir les éléments qui sont fixes par rapport à ceux qui changent
         - Faire le mix entre une variable du backend et du code PHP dans le front
-
+        - Si on voit un tableau dans le front, c'est que ca pue le `for`
         ```php
         <?php
         for ($i = 0; $i < 10; ++$i)
@@ -38,6 +38,21 @@ On fait le service demandé. On lit énoncé ? Plusieurs fois ?
         ?>
         ```
         - Il y a une boucle `for`, ca veut dire que ca pue le tableau !
+        ```php
+        for ($i = 0; $i < count($tableau); ++$i)
+        {
+        ?>
+
+        <tr>
+            <td>Livre</td>
+            <td>1</td>
+            <td>250.0</td>
+        </tr>
+
+        <?php
+        }
+        ?>
+        ```
 
 2. Développement back
         - Vous pensez dictionnaire ? ca veut dire que ca pue la classe (exemple : `ArticleSelectionne`). Mettez les bonnes propriétés !
