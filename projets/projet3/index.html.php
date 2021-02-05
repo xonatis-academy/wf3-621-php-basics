@@ -20,32 +20,32 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    for ($i = 0; $i < count($tableau); ++$i)
+                    {
+                    ?>
+
                     <tr>
-                        <td>Livre</td>
-                        <td>1</td>
-                        <td>250.0</td>
+                        <td><?php echo $tableau[$i]->nom; ?></td>
+                        <td><?php echo $tableau[$i]->quantite; ?></td>
+                        <td><?php echo $tableau[$i]->prix; ?></td>
                     </tr>
-                    <tr>
-                        <td>Voiture</td>
-                        <td>1</td>
-                        <td>100.0</td>
-                    </tr>
-                    <tr>
-                        <td>Moto</td>
-                        <td>3</td>
-                        <td>250.0</td>
-                    </tr>
+
+                    <?php
+                    }
+                    ?>
+
                     <tr>
                         <td class="font-weight-bold">Total</td>
                         <td></td>
-                        <td class="font-weight-bold">600.0</td>
+                        <td class="font-weight-bold"><?php echo $total; ?></td>
                     </tr>
                 </tbody>
             </table>
-            <form method="post" action="/exos/exo2.php">
-                <button type="submit" class="btn btn-primary">Ajouter un livre</button>
-                <button type="submit" class="btn btn-primary">Ajouter une voiture</button>
-                <button type="submit" class="btn btn-primary">Ajouter une moto</button>
+            <form method="get" action="index.php">
+                <button name="btn-livre" type="submit" class="btn btn-primary">Ajouter un livre</button>
+                <button name="btn-voiture" type="submit" class="btn btn-primary">Ajouter une voiture</button>
+                <button name="btn-moto" type="submit" class="btn btn-primary">Ajouter une moto</button>
             </form>
         </div>
     </div>
