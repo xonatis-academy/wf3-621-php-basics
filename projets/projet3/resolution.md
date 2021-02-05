@@ -34,13 +34,22 @@
     - Tester dans le navigateur
     - On se pose la question des **Modèles : que doit contenir mon tableau ? On veut une réponse en 1 mot
     - Créer une classe avec la réponse précédente, je mets les propriétés qu'on affiche dans la vue (c'est-à-dire que l'on affiche dans le fichier html.php)
-    - Ajouter des objets dans le tableau `new` en PHP dans le fichier index.php avec des noms atypiques pour les tests
+    ```php
+    class Article
+    {
+        public $nom;
+        public $prix;
+        public $quantite;
+    }
+    ```
+    - Créer des objets à partir de cette classe `new` en PHP dans le fichier index.php avec des noms atypiques pour les tests
     ```php
     $article1 = new Article();
     $article1->nom = 'Test test test';
     $article1->prix = 999.0;
     $article1->quantite = 99;
     ```
+    - On teste pour voir si on voit les valeurs de cet objet
     - Si cela n'apparait pas, c'est qu'il y a probablement un affiche en dur (statique) dans l'HTML -> il faut le dynamiser
     ```html
     <td><?php echo $tableau[$i]->nom; ?></td>
@@ -61,5 +70,6 @@ if (isset($_XXXX['YYYY']))
 ```
 XXXX c'est la super global, YYYY c'est la clé pour retrouver la donnée
 soit XXXX = POST si les données sont dans payload soit XXXX = GET si les données sont dans l'URL
+
 3. On vient de faire `Veuillez ajouter des fonctionnalités aux boutons d'ajout` sauf que la fonctionnalité est vide
 4. On relit l'énoncé pour voir ce qu'il faut faire pour la fonctionnalité. Le panier, c'est le `$tableau` qui contient des articles

@@ -14,8 +14,8 @@ Veuillez modifier cette page de catalogue pour que les articles soient pris dire
 - Créez une table dans la base de données préfixée par votre nom ou prenom.
 La table devra avoir les caractéristiques suivantes :
     - nom de la table suffixé par `projet5_produits`
-    - colonnes : `id`, `nom`, `prix`
+    - colonnes : `id`, `nom`, `prix`, `image`
 
-- Modifiez le provider pour qu'il puisse fournir les données à partir de la base de données. Vous pouvez utiliser `mysqli`.
+- Modifiez le provider pour qu'il puisse fournir les données à partir de la base de données. Vous pouvez utiliser `PDO`.
 
 
