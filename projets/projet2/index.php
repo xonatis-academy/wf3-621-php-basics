@@ -1,6 +1,19 @@
 <?php
 session_start();
 
+function findArticleSelectionne($tableau, $nomDuProduit)
+{
+    for ($i = 0; $i < count($tableau); ++$i)
+    {
+        if ($tableau[$i]->nom == $nomDuProduit)
+        {
+            return $tableau[$i];
+        }
+    }
+
+    return null;
+}
+
 class ArticleSelectionne
 {
     public $nom;
@@ -23,31 +36,47 @@ else
 if (isset($_GET['btn-moto']))
 // Si le paramètre 'btn-moto' est dans l'URL 
 {
-    // On crée un nouvel article vide
-    $article = new ArticleSelectionne();
+    $articleExistant = findArticleSelectionne($tableau, 'Moto');
+    if ($articleExistant == null)
+    {
+        // On crée un nouvel article vide
+        $article = new ArticleSelectionne();
 
-    // On renseigne les champs pour 1 moto
-    $article->nom = 'Moto';
-    $article->prix = 1234.50;
-    $article->quantite = 1;
+        // On renseigne les champs pour 1 moto
+        $article->nom = 'Moto';
+        $article->prix = 1234.50;
+        $article->quantite = 1;
 
-    // On ajoute l'article dans le tableau des articles
-    $tableau[] = $article;
+        // On ajoute l'article dans le tableau des articles
+        $tableau[] = $article;
+    }
+    else
+    {
+        ++$articleExistant->quantite;
+    }
 }
 
 if (isset($_GET['btn-livre']))
 // Si le paramètre 'btn-moto' est dans l'URL 
 {
-    // On crée un nouvel article vide
-    $article = new ArticleSelectionne();
+    $articleExistant = findArticleSelectionne($tableau, 'Moto');
+    if ($articleExistant == null)
+    {
+        // On crée un nouvel article vide
+        $article = new ArticleSelectionne();
 
-    // On renseigne les champs pour 1 moto
-    $article->nom = 'Livre';
-    $article->prix = 250.50;
-    $article->quantite = 1;
+        // On renseigne les champs pour 1 moto
+        $article->nom = 'Livre';
+        $article->prix = 250.50;
+        $article->quantite = 1;
 
-    // On ajoute l'article dans le tableau des articles
-    $tableau[] = $article;
+        // On ajoute l'article dans le tableau des articles
+        $tableau[] = $article;
+    }
+    else
+    {
+        ++$articleExistant->quantite;
+    }
 }
 
 if (isset($_GET['btn-voiture']))
