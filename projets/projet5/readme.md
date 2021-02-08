@@ -14,7 +14,7 @@ La table devra avoir les caractéristiques suivantes :
 
 # Exercice 2 : Affichage des données
 
-- Afficher les enregistrements de la base de données sous forme de tableau, dans lequel chaque ligne représente un produits.
+- Afficher les enregistrements de la base de données sous forme de tableau, dans lequel chaque ligne représente un produit.
 Vous pouvez utiliser `PDO` ou `mysqli`
 
 # Exercice 3 : Enregistrement des données

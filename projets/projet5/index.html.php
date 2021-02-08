@@ -8,7 +8,32 @@
 </head>
 
 <body>
-    ??
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Image</th>
+        </tr>
+
+        <?php
+        for ($i = 0; $i < count($tableau); ++$i)
+        {
+        ?>
+
+        <tr>
+            <td><?php echo $tableau[$i]->nom ?></td>
+            <td><?php echo $tableau[$i]->prix ?> euros</td>
+            <td>
+                <img class="w-50" src="<?php echo $tableau[$i]->image ?>" />
+            </td>
+        </tr>
+        
+        <?php
+        }
+        ?>
+
+    </table>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
