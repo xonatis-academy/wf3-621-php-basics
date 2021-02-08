@@ -30,8 +30,17 @@ Vous pouvez utiliser `PDO` ou `mysqli`
 - Vous pourrez stocker les fichiers uploadés sur votre serveur avec le code suivant :
 
 ```php
+function insererNoveau($produit) 
+{
+    $connection = new PDO('mysql:host=challenge.xonatis.academy;dbname=wf3_621', 'wf3_621', 'tropbien');
+    $resultat = $connection->prepare('INSERT INTO produits(nom, prix, photo, type, description)
+ 	VALUES (?, ?, ?, ?, ?)');
+    $resultat->execute([$produit->nom, $produit->prix, $produit->photo, $produit->type, $produit->description]);
+}
+``` 
+
+```php
 $targetFolder = "uploads/";
 $targetFile = $targetFolder . basename($_FILES["name_file_input"]["name"]);
 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile);
 ```
-
