@@ -48,7 +48,7 @@ function insererDansLaBase($article)
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    $resultat = $connection->prepare("INSERT INTO projet5_produit(nom, prix, image) VALUES(?, ?, ?)");
+    $resultat = $connection->prepare("INSERT INTO projet5_produits(nom, prix, image) VALUES(?, ?, ?)");
     $resultat->execute([$article->nom, $article->prix, $article->image]);
 
     return null;

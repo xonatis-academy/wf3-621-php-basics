@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form method="POST" action="index.php">
+    <form method="POST" action="index.php" enctype="multipart/form-data">
         <label>Nom du produit :</label>
         <input type="text" name="product-name" />
         <label>Son prix :</label>
