@@ -37,7 +37,7 @@ function recupererDonneesDepuisFront()
         $article->prix = $_POST['product-price'];   
     }
 
-    $article->image = '';
+    $article->image = 'uploads/'.basename($_FILES["product-photo-file"]["name"]);
 
     return $article;
 }
