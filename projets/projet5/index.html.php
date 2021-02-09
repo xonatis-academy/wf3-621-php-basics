@@ -8,6 +8,16 @@
 </head>
 
 <body>
+    <form method="POST" action="index.php">
+        <label>Nom du produit :</label>
+        <input type="text" name="product-name" />
+        <label>Son prix :</label>
+        <input type="text" name="product-price" />
+        <label>Son image : </label>
+        <input type="file" name="product-photo-file" />
+        <button type="submit" name="btn-valider">Valider</button>
+    </form>
+    
     <table>
         <tr>
             <th>Nom</th>

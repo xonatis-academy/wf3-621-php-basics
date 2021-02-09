@@ -10,7 +10,7 @@ function creerHydraterArticle($ligneDeBdd)
     return $nouvelArticle;
 }
 
-function convertirTableProduitEnTableauPhp()
+function recupererTableProduitEnTableauPhp()
 {
     $tableau = [];
     $connection = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
@@ -21,5 +21,22 @@ function convertirTableProduitEnTableauPhp()
         array_push($tableau, $article);
     }
     return $tableau;
+}
+
+function recupererDonneesDepuisFront()
+{
+    $article = new Article();
+
+    if (isset($_POST['product-name']))
+    {
+        $article->nom = $_POST['product-name'];
+    }
+
+    if (isset($_POST['product-price']))
+    {
+        $article->prix = $_POST['product-price'];   
+    }
+
+    return $article;
 }
 ?>
