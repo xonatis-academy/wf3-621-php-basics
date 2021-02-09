@@ -9,4 +9,17 @@ function creerHydraterArticle($ligneDeBdd)
 
     return $nouvelArticle;
 }
+
+function convertirTableProduitEnTableauPhp()
+{
+    $tableau = [];
+    $connection = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
+    $resultat = $connection->query('SELECT * FROM projet5_produits');
+    while ($ligne = $resultat->fetch())
+    {
+        $article = creerHydraterArticle($ligne);
+        array_push($tableau, $article);
+    }
+    return $tableau;
+}
 ?>
