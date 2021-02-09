@@ -48,7 +48,9 @@ function insererDansLaBase($article)
     $resultat = $connection->prepare("INSERT INTO projet5_produits(nom, prix, image) VALUES(?, ?, ?)");
     $resultat->execute([$article->nom, $article->prix, $article->image]);
 
-    var_dump($connection->errorinfo());
+    // Tips : si votre requete ne fonctionne pas, afficher
+    // les erreurs potentielles
+    // var_dump($connection->errorInfo());
 
     return null;
 }
