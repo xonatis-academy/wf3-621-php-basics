@@ -53,4 +53,13 @@ function insererDansLaBase($article)
 
     return null;
 }
+
+function enregistrerFichierSoumis()
+{
+    $targetFolder = "uploads/";
+    $targetFile = $targetFolder . basename($_FILES["product-photo-file"]["name"]);
+    move_uploaded_file($_FILES["product-photo-file"]["tmp_name"], $targetFile);
+    
+    return $targetFile;
+}
 ?>
