@@ -45,12 +45,11 @@ function recupererDonneesDepuisFront()
 function insererDansLaBase($article)
 {
     $connection = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
-    $resultat = $connection->prepare("INSERT INTO projet5_produits(nom, prix, image) VALUES(?, ?, ?)");
-    $resultat->execute([$article->nom, $article->prix, $article->image]);
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    // Tips : si votre requete ne fonctionne pas, afficher
-    // les erreurs potentielles
-    // var_dump($connection->errorInfo());
+    $resultat = $connection->prepare("INSERT INTO projet5_produit(nom, prix, image) VALUES(?, ?, ?)");
+    $resultat->execute([$article->nom, $article->prix, $article->image]);
 
     return null;
 }
