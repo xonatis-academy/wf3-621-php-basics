@@ -9,8 +9,8 @@ class Article
 
 $tableau = [];
 
-$connection = new PDO('mysql:host=challenge.xonatis.academy;dbname=wf3_621', 'wf3_621', 'tropbien');
-$resultat = $connection->query('SELECT * FROM michael_projet5_produits');
+$connection = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
+$resultat = $connection->query('SELECT * FROM projet5_produits');
 while ($ligne = $resultat->fetch())
 {
     $article = new Article();
