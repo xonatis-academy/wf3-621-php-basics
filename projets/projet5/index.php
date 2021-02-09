@@ -6,7 +6,7 @@ include __DIR__.'/Article.php';
 if (isset($_POST['btn-valider']))
 {
     $article = recupererDonneesDepuisFront();
-    var_dump($article);
+    insererDansLaBase($article);
 }
 
 $tableau = recupererTableProduitEnTableauPhp();

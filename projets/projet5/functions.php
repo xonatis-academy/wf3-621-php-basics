@@ -37,6 +37,19 @@ function recupererDonneesDepuisFront()
         $article->prix = $_POST['product-price'];   
     }
 
+    $article->image = '';
+
     return $article;
+}
+
+function insererDansLaBase($article)
+{
+    $connection = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
+    $resultat = $connection->prepare("INSERT INTO projet5_produits(nom, prix, image) VALUES(?, ?, ?)");
+    $resultat->execute([$article->nom, $article->prix, $article->image]);
+
+    var_dump($connection->errorinfo());
+
+    return null;
 }
 ?>
