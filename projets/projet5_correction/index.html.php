@@ -11,7 +11,8 @@
         <h1 class="display-4 text-center">Gestion des produits</h1>
 
         <?php
-        if ($messageErreur !== null) {
+        if ($messageErreur !== null) 
+        {
         ?>
 
             <div class="alert alert-danger" role="alert">
