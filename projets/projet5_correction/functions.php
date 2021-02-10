@@ -4,8 +4,8 @@ define('DOSSIER_UPLOADS', 'uploads');
 
 /**
  * convertirLigneBddEnArticle
- * @param
- * @return 
+ * @param ligneDeBdd : une ligne de la base de données
+ * @return article : un nouvel article qui contient id, nom, prix et image de la ligne bdd correspondante
  */
 function convertirLigneBddEnArticle($ligneDeBdd)
 {
@@ -19,8 +19,8 @@ function convertirLigneBddEnArticle($ligneDeBdd)
 
 /**
  * recupererTousLesArticles
- * @param
- * @return 
+ * @param rien
+ * @return tableau : tableau de nouvel article qui contient id, nom, prix et image à partir de la table projet5_produits
  */
 function recupererTousLesArticles()
 {
@@ -40,8 +40,8 @@ function recupererTousLesArticles()
 
 /**
  * recupererUnSeulArticleAvecId
- * @param
- * @return 
+ * @param id : un identifiant d'un article
+ * @return article : l'article correspondant à l'id en question en base de données
  */
 function recupererUnSeulArticleAvecId($id)
 {
@@ -59,8 +59,9 @@ function recupererUnSeulArticleAvecId($id)
 
 /**
  * verifierPayloadPourCreerArticle
- * @param
- * @return 
+ * @param rien
+ * @return message : message d'erreur s'il manque quelque chose pour créer un article, 
+ * sinon s'il ne manque rien, ca retoure null
  */
 function verifierPayloadPourCreerArticle()
 {
