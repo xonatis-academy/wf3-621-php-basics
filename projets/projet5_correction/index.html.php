@@ -11,13 +11,12 @@
         <h1 class="display-4 text-center">Gestion des produits</h1>
 
         <?php
-        if ($messageErreur !== null)
-        {
+        if ($messageErreur !== null) {
         ?>
-        
-        <div class="alert alert-danger" role="alert">
-            <?php echo $messageErreur; ?>
-        </div>
+
+            <div class="alert alert-danger" role="alert">
+                <?php echo $messageErreur; ?>
+            </div>
 
         <?php
         }
@@ -53,13 +52,27 @@
             ?>
 
                 <tr>
-                    <td><?php echo $tableau[$i]->nom ?></td>
+                    <td class="w-25">
+                        <?php echo $tableau[$i]->nom ?>
+                        <div class="mt-2">
+                            <a href="details.php?id=<?php echo $tableau[$i]->id ?>" class="btn btn-secondary">Voir sur le site</a>
+                        </div>
+                    </td>
                     <td><?php echo $tableau[$i]->prix ?> euros</td>
                     <td>
                         <img class="w-100" src="<?php echo $tableau[$i]->image ?>" />
                     </td>
                     <td>
-                        <a href="details.php?id=<?php echo $tableau[$i]->id ?>" class="btn btn-primary">Voir</a>
+                        <div>
+                            <form method="POST" action="index.php">
+                                <input type="hidden" name="article-id" value="<?php echo $tableau[$i]->id ?>" /><br />
+                                <select name="operation">
+                                    <option value="voir-article">Voir</option>
+                                    <option value="supprimer-article">Supprimer</option>
+                                </select>
+                                <button type="submit" name="btn-action" class="btn btn-danger">Confirmer</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
 

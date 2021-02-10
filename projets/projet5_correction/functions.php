@@ -99,7 +99,9 @@ function verifierPayloadPourCreerArticle()
  */
 function determinerCheminFichierEnregistre()
 {
-    $chemin = DOSSIER_UPLOADS . '/' . basename($_FILES["product-photo-file"]["name"]);
+    $timestamp = strval(time());
+    $extension = pathinfo(basename($_FILES["product-photo-file"]["name"]), PATHINFO_EXTENSION);
+    $chemin = DOSSIER_UPLOADS . '/' . $timestamp . '.' . $extension;
     return $chemin;
 }
 
@@ -110,12 +112,9 @@ function determinerCheminFichierEnregistre()
  */
 function enregistrerFichierEnvoye()
 {
-    $targetFile = determinerCheminFichierEnregistre();
-    if (!is_dir(DOSSIER_UPLOADS)) {
-        mkdir(DOSSIER_UPLOADS);
-    }
-    move_uploaded_file($_FILES["product-photo-file"]["tmp_name"], $targetFile);
-    return $targetFile;
+    $chemin = determinerCheminFichierEnregistre();
+    move_uploaded_file($_FILES["product-photo-file"]["tmp_name"], $chemin);
+    return $chemin;
 }
 
 /**
@@ -125,10 +124,11 @@ function enregistrerFichierEnvoye()
  */
 function convertirPayloadEnArticle()
 {
+    $image = enregistrerFichierEnvoye();
     $article = new Article();
     $article->nom = $_POST['product-name'];
     $article->prix = $_POST['product-price'];
-    $article->image = determinerCheminFichierEnregistre();
+    $article->image = $image;
 
     return $article;
 }
@@ -149,4 +149,23 @@ function insererDansBdd($article)
 
     return null;
 }
+
+/**
+ * 
+ * @param
+ * @return 
+ */
+function supprimerDansBdd($article)
+{
+    $tunnel = new PDO('mysql:host=localhost;dbname=wf3_621', 'root', '');
+    $tunnel->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $tunnel->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    $resultat = $tunnel->prepare("DELETE FROM projet5_produits WHERE id = ?");
+    $resultat->execute([$article->id]);
+
+    return null;
+}
+
+
 ?>

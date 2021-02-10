@@ -12,9 +12,26 @@ if (isset($_POST['btn-valider']))
     $messageErreur = verifierPayloadPourCreerArticle();
     if ($messageErreur === null)
     {
-        enregistrerFichierEnvoye();
         $article = convertirPayloadEnArticle();
         insererDansBdd($article);
+    }
+}
+
+if (isset($_POST['btn-action']))
+{
+    if (isset($_POST['operation']) && isset($_POST['article-id']))
+    {
+        if ($_POST['operation'] === 'voir-article')
+        {
+            header('LOCATION: details.php?id='.$_POST['article-id']);
+            die();
+        }
+
+        if ($_POST['operation'] === 'supprimer-article')
+        {
+            $article = recupererUnSeulArticleAvecId($_POST['article-id']);
+            supprimerDansBdd($article);
+        }
     }
 }
 
