@@ -3,7 +3,7 @@
 define('DOSSIER_UPLOADS', 'uploads');
 
 /**
- * 
+ * convertirLigneBddEnArticle
  * @param
  * @return 
  */
@@ -18,7 +18,7 @@ function convertirLigneBddEnArticle($ligneDeBdd)
 }
 
 /**
- * 
+ * recupererTousLesArticles
  * @param
  * @return 
  */
@@ -39,7 +39,7 @@ function recupererTousLesArticles()
 }
 
 /**
- * 
+ * recupererUnSeulArticleAvecId
  * @param
  * @return 
  */
@@ -58,7 +58,7 @@ function recupererUnSeulArticleAvecId($id)
 }
 
 /**
- * 
+ * verifierPayloadPourCreerArticle
  * @param
  * @return 
  */
@@ -93,7 +93,7 @@ function verifierPayloadPourCreerArticle()
 }
 
 /**
- * 
+ * determinerCheminFichierEnregistre
  * @param
  * @return 
  */
@@ -106,7 +106,7 @@ function determinerCheminFichierEnregistre()
 }
 
 /**
- * 
+ * enregistrerFichierEnvoye
  * @param
  * @return 
  */
@@ -118,7 +118,7 @@ function enregistrerFichierEnvoye()
 }
 
 /**
- * 
+ * convertirPayloadEnArticle
  * @param
  * @return 
  */
@@ -134,7 +134,7 @@ function convertirPayloadEnArticle()
 }
 
 /**
- * 
+ * insererDansBdd
  * @param
  * @return 
  */
@@ -151,7 +151,7 @@ function insererDansBdd($article)
 }
 
 /**
- * 
+ * supprimerDansBdd
  * @param
  * @return 
  */
