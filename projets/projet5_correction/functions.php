@@ -20,7 +20,7 @@ function convertirLigneBddEnArticle($ligneDeBdd)
 /**
  * recupererTousLesArticles
  * @param rien
- * @return tableau : tableau de nouvel article qui contient id, nom, prix et image à partir de la table projet5_produits
+ * @return tableau : tableau d'articles qui contient id, nom, prix et image à partir de la table projet5_produits
  */
 function recupererTousLesArticles()
 {
@@ -60,7 +60,7 @@ function recupererUnSeulArticleAvecId($id)
 /**
  * verifierPayloadPourCreerArticle
  * @param rien
- * @return message : message d'erreur s'il manque quelque chose pour créer un article, 
+ * @return message : message d'erreur s'il manque quelque chose pour créer un article dans le payload, 
  * sinon s'il ne manque rien, ca retoure null
  */
 function verifierPayloadPourCreerArticle()
@@ -95,8 +95,8 @@ function verifierPayloadPourCreerArticle()
 
 /**
  * determinerCheminFichierEnregistre
- * @param
- * @return 
+ * @param rien
+ * @return chemin : chemin d'un ficher dans le dossier, composé de l'heure courant et de l'extension du fichier envoyé
  */
 function determinerCheminFichierEnregistre()
 {
@@ -108,7 +108,7 @@ function determinerCheminFichierEnregistre()
 
 /**
  * enregistrerFichierEnvoye
- * @param
+ * @param 
  * @return 
  */
 function enregistrerFichierEnvoye()
