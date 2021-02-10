@@ -96,7 +96,7 @@ function verifierPayloadPourCreerArticle()
 /**
  * determinerCheminFichierEnregistre
  * @param rien
- * @return chemin : chemin d'un ficher dans le dossier, composé de l'heure courant et de l'extension du fichier envoyé
+ * @return chemin : chemin d'un ficher dans le dossier, composé de l'heure courante et de l'extension du fichier envoyé
  */
 function determinerCheminFichierEnregistre()
 {
@@ -108,8 +108,8 @@ function determinerCheminFichierEnregistre()
 
 /**
  * enregistrerFichierEnvoye
- * @param 
- * @return 
+ * @param rien
+ * @return chemin : chemin d'un ficher dans le dossier, composé de l'heure courante et de l'extension du fichier envoyé
  */
 function enregistrerFichierEnvoye()
 {
@@ -120,8 +120,8 @@ function enregistrerFichierEnvoye()
 
 /**
  * convertirPayloadEnArticle
- * @param
- * @return 
+ * @param rien
+ * @return article : un article qui comporte nom, prix et image qui viennent du payload
  */
 function convertirPayloadEnArticle()
 {
@@ -136,8 +136,8 @@ function convertirPayloadEnArticle()
 
 /**
  * insererDansBdd
- * @param
- * @return 
+ * @param article : un article à insérer dans la base de données
+ * @return null
  */
 function insererDansBdd($article)
 {
@@ -153,8 +153,8 @@ function insererDansBdd($article)
 
 /**
  * supprimerDansBdd
- * @param
- * @return 
+ * @param article : un article à supprimer dans la base de données
+ * @return null
  */
 function supprimerDansBdd($article)
 {
